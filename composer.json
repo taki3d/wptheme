@@ -1,0 +1,5 @@
+{
+    "require": {
+        "phing/phing": "3.0.x-dev"
+    }
+}
