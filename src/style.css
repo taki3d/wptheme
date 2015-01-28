@@ -1,0 +1,99 @@
+/* 
+    Theme Name: They Ay Box
+    Theme URI: http://theaybox.com
+    Description: The Ay Box Custom Theme
+    Version: 1.0
+    Author: Takiedidne Boumaza
+    Author URI: http://takiboumaza.com
+*/
+@import url('css/bootstrap.min.css');
+a{
+   color:#269bd2;
+}
+.admin-bar .navbar-fixed-top {
+    top: 32px;
+}
+body, html{
+   height:100%;
+}
+body{
+   background-color:#222;
+}
+.container{
+   background-image: url('default/bg.jpg');
+   background-color: lightgrey;
+   width: 100%;
+}
+.content{
+   border-left: 1px solid #999;
+   border-right: 1px solid #999;
+   padding:3.5%;
+   background-color:white;
+   max-width: 1024px;
+   margin: 0 auto;
+   box-shadow: 5px 0px 10px #999;
+}
+.content-top{
+   border-left: 1px solid #999;
+   border-right: 1px solid #999;
+   background-color:white;
+   max-width: 1024px;
+   margin: 0 auto;
+   box-shadow: 5px 0px 10px #999;
+}
+.footer{
+   padding:2%;
+   color: grey;
+   background-color:#222;
+   margin:0 auto;
+}
+.footer a{
+   color: grey;
+}
+.navbar-logo{
+   margin:5px;
+   vertical-align: top;
+}
+
+.row{
+   max-width:1024px;
+   margin:0 auto;
+}
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+       height:100%;
+}
+.thumbnail{
+   text-align:center;
+   padding:1.5%;
+}
+
+.posts{
+   border-right:1px solid #EEE;
+}
+
+h4{
+   text-shadow: x-position y-position shadow-size shadow-color;
+}
+.carousel{
+   overflow:hidden;
+   
+}
+.item img{
+   width:100%;
+   min-height:55%;
+}
+.carousel-caption{
+   max-width:60%;
+   text-align:left;
+}
+
+.thumbnail h4{
+   letter-spacing: 2px;
+}
+.footer row{
+   background-color:#111;
+}
+.img-rounded{
+ margin:2%;  
+}
