@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name = "wptheme" basedir = "." default = "main">
-    <property file = "./build.properties" />
-    <property name = "package" value = "${phing.project.name}" override = "true" />
-    <property name = "builddir" value = "./build/testsite" override = "true" />
-    <property name = "srcdir" value = "${project.basedir}" override = "true" />
-    <!-- Fileset for all files -->
-    <fileset dir = "src/" id = "allfiles">
-        <include name = "**" />
+<project name="wptheme" basedir="." default="build">
+    <!--project props-->
+    <property name="src" value="${project.basedir}\src"/>
+    <property name="build" value="${project.basedir}\build"/>
+
+    <!-- Fileset for all files excluding scss-->
+    <fileset dir="${src}" id="srcfiles">
+        <include name="**"/>
+        <exclude name="style\scss\"/>
     </fileset>
-    <!-- ============================================ -->
-    <!-- (DEFAULT) Target: main -->
-    <!-- ============================================ -->
-    <target name = "build" description = "main target">
-        <copy todir = "${builddir}">
-            <fileset refid = "allfiles" />
+
+    <!-- (DEFAULT) Target: build -->
+    <target name="build" description="build target" depends="clean">
+        <copy todir="${build}">
+            <fileset refid="srcfiles"/>
         </copy>
+        <exec command="pscss -f scss_formatter_compressed &lt; ..\..\src\style\scss\app.scss &gt; ..\..\build\style\css\app.css"
+              dir="${project.basedir}\vendor\bin\" escape="true"/>
+        <echo>...SCSS to CSS Compiled</echo>
     </target>
-    <!-- ============================================ -->
-    <!-- Target: Rebuild -->
-    <!-- ============================================ -->
-    <target name = "rebuild" description = "rebuilds this package">
-        <delete dir = "${builddir}" />
-        <phingcall target = "main" />
+
+    <!-- Target: clean -->
+    <target name="clean" description="clean build">
+        <delete dir="${build}"/>
     </target>
 </project>

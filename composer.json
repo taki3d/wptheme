@@ -1,5 +1,6 @@
 {
     "require": {
-        "phing/phing": "3.0.x-dev"
+        "phing/phing": "3.0.x-dev",
+        "leafo/scssphp": "0.0.12"
     }
 }
